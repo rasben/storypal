@@ -1,0 +1,15 @@
+<div {{ attributes.addClass('layout') }}>
+  {% block header %}
+    {% for element in header %}
+      {{ element }}
+    {% endfor %}
+  {% endblock %}
+
+  <main role="main" class="layout__container">
+    {% block content %}
+      {% for element in content %}
+        {{ element }}
+      {% endfor %}
+    {% endblock %}
+  </main>
+</div>

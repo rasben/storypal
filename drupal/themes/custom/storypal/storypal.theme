@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file Storypal theme functions.
+ */
+
+/*
+ * Implements hook_library_info_build().
+ *
+ * Dynamically loading the component JS and defining them as libraries.
+ *
+ * Taking each of the files in /dist/js/components and creating a
+ * storypal/JS-NAME library, to be attached in the relevant twig file.
+ * In the Storybook, the attachment happens through the .stories.js file.
+ */
+function storypal_library_info_build() {
+    $directory = 'themes/custom/storypal/dist/js/components';
+    $file_scan = \Drupal::service('file_system')->scanDirectory($directory, "/js$/");
+    $libraries = [];
+
+    foreach ($file_scan as $file) {
+        $libraries[$file->name]['js'] = [
+            '/' . $file->uri => [],
+        ];
+    }
+
+    return $libraries;
+}
