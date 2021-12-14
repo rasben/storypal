@@ -2,6 +2,13 @@
 
 ## Storybook + Drupal = Story-Pal 🤩
 
+### This repo is a bit redundant
+
+After making this repo, I found https://github.com/emulsify-ds/emulsify-drupal which appears to do what I'm trying to do - but even better!
+
+I'll keep this repo alive though, as I might take some of their nice learnings and make it a bit simpler :)
+
+
 ### What is Storybook?
 
 
